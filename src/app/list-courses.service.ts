@@ -38,6 +38,14 @@ export class ListCoursesService {
  {
    return this.tabCourses.find((element)=>element.id==id);
   }
+  deleteCourse(course) {
+    let i = this.tabCourses.indexOf(course);
+    this.tabCourses.splice(i, 1);}
 
+    addCourse(newCourse) {
+      newCourse.id = this.tabCourses[this.tabCourses.length - 1].id + 1;
+      newCourse.keywords = newCourse.keywords.split(',');
+      this.tabCourses.push(newCourse);
+    }
+  }
 
-}
