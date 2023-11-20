@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Our Catalog
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div >
+    <strong>we propse these new courses : </strong>
+    <br>
+    <ion-list>
+      <ion-item  
+      *ngFor="let item of allCourses" 
+      [routerLink]="['/details',item.id]"
+      >
+        <ion-avatar class="ion-margin-horizontal">
+          <img alt={{item.title}} [src]="item.image"/>
+          
+        </ion-avatar>
+        <ion-label>{{item.title}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
